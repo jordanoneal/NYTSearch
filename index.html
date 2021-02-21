@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYT Search</title>
+
+    <!-- Bootstrap CSS CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>
+          <strong>
+            <i class="fa fa-newspaper-o"></i> New York Times Search</strong
+          >
+        </h1>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-list-alt"></i> Search Parameters
+        </div>
+
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Search Term:</label>
+              <input type="text" class="form-control" id="search-term" />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2"
+                >Number of Records to Retrieve:</label
+              >
+              <select class="custom-select" id="article-count">
+                <option selected value="1">1</option>
+                <!-- Setting the option for 5 as default -->
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Start Year (Optional): </label>
+              <input type="text" class="form-control" id="start-year" />
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">End Year (Optional): </label>
+              <input type="text" class="form-control" id="end-year" />
+            </div>
+
+            <button type="submit" class="btn btn-default" id="run-search">
+              <i class="fa fa-search"></i> Search
+            </button>
+
+            <button class="btn btn-default" id="clear-all">
+              <i class="fa fa-trash"></i> Clear Results
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="card">
+        <div class="card-header"><i class="fa fa-table"></i> Top Articles</div>
+
+        <!-- This main card will hold each of the resulting articles -->
+        <div class="card-body" id="article-section"></div>
+      </div>
+
+      <!-- Footer Region -->
+      <div class="row" id="footer">
+        <div class="col-sm-12">
+          <!-- Line Break followed by closing -->
+          <hr />
+          <p>
+            Made with lots and lots of
+            <i class="fa fa-heart"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="index.js"></script>
+  </body>
+</html>
